@@ -7,3 +7,5 @@ const greet = (name) => {
 
 greet('mario');
 greet('yoshi');
+
+// run the code: navigate to the folder and type node helloNodejs.js
