@@ -7,10 +7,11 @@ My practice pool for node.js programming...
 packages improving the coding experience:
 
 ### nodemon
+To install
 ```linux
 sudo npm install -g nodemon
 ```
-### start 
+To start server
 ```linux
 nodemon server
 ```
