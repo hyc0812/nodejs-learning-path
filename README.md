@@ -4,6 +4,10 @@ My practice pool for node.js programming...
 
 ## MEMO
 
+### Q1 install packages locally or globally
+
+using `-g`
+
 packages improving the coding experience:
 
 ### nodemon
