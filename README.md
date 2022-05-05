@@ -4,13 +4,14 @@ My practice pool for node.js programming...
 
 ## MEMO
 
-### Q1 install packages locally or globally
+### 1 install packages locally or globally
 
 using `-g`
 
-packages improving the coding experience:
 
-### nodemon
+### 2 packages improving the coding experience:
+
+#### nodemon
 To install
 ```linux
 sudo npm install -g nodemon
