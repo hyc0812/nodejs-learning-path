@@ -6,7 +6,7 @@ My practice pool for node.js programming...
 
 ### 1 install packages locally or globally
 
-using `-g`
+using `-g` e.g.: npm install -g nodemon
 
 
 ### 2 packages improving the coding experience:
@@ -21,6 +21,13 @@ To start server
 nodemon server
 ```
 > This package helps to develop without restart server manually repeatedly.
+
+
+#### lodash
+To install
+```linux
+npm install lodash
+```
 
 References:
 

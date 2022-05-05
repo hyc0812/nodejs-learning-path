@@ -1,11 +1,26 @@
 // import http module
 const http = require('http');
 const fs = require('fs');
+const _ = require('lodash');
 
 // server has been created
 const server = http.createServer((req, res) => {
+    // lodash
+    const num = _.random(0, 20);
+    console.log(num);
+
+    const greet = _.once(() => {
+        console.log('hello');
+    });
+
+    greet();
+    greet();
+    
+
+
     // set header content type
     res.setHeader('Content-Type', 'text/html');
+
     let path = './views/';
     switch(req.url) {
         case '/':
