@@ -14,7 +14,12 @@ app.listen(3000);
 
 
 app.get('/', (req, res) => {
-    res.render('index', { title: 'Home' }); 
+    const blogs = [
+        { title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.' },
+        { title: 'Mario finds stars', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.' },
+        { title: 'Link finds secret', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.' },
+    ];
+    res.render('index', { title: 'Home', blogs }); 
 })
 
 app.get('/about', (req, res) => {
