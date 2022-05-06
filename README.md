@@ -16,12 +16,13 @@ To install
 ```linux
 sudo npm install -g nodemon
 ```
+> Seems good to choose to install globally
+> This package helps develop without restart server manually and repeatedly.
+
 To start server
 ```linux
-nodemon server
+nodemon fileName
 ```
-> This package helps to develop without restart server manually repeatedly.
-
 
 #### lodash
 To install
@@ -29,6 +30,17 @@ To install
 npm install lodash
 ```
 #### express
+To install
+```linux
+npm install express
+```
+> Helps maintain the code with elegant flavor
+
+#### ejs
+To install
+```linux
+npm install ejs
+```
 
 
 References:
