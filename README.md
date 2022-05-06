@@ -13,6 +13,7 @@ using `-g` e.g.: npm install -g nodemon
 
 #### nodemon
 > This package helps develop without restart server manually and repeatedly.
+
 To install
 ```linux
 sudo npm install -g nodemon
@@ -31,6 +32,7 @@ npm install lodash
 ```
 #### express
 > Helps maintain the code with simple and elegant flavor
+
 To install
 ```linux
 npm install express
