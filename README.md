@@ -54,6 +54,14 @@ To install
 npm install morgan
 ```
 
+#### mongoose
+> Help us better communicate with MongoDB.
+
+To install
+```linux
+npm install mongoose
+```
+
 
 References:
 

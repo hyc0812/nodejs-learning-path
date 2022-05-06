@@ -5,6 +5,9 @@ const morgan = require('morgan');
 // express app
 const app = express();
 
+// MongoDB URI
+const mongoURI = 'mongodb+srv://yongchanghe:abcdABCD12345@node-for-yong.yojr5.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
 // register view engine, important
 app.set('views', './views');
 app.set('view engine', 'ejs');
