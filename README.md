@@ -12,12 +12,12 @@ using `-g` e.g.: npm install -g nodemon
 ### 2 packages improving the coding experience:
 
 #### nodemon
+> This package helps develop without restart server manually and repeatedly.
 To install
 ```linux
 sudo npm install -g nodemon
 ```
-> Seems good to choose to install globally
-> This package helps develop without restart server manually and repeatedly.
+> Choose to install globally
 
 To start server
 ```linux
@@ -30,11 +30,12 @@ To install
 npm install lodash
 ```
 #### express
+> Helps maintain the code with simple and elegant flavor
 To install
 ```linux
 npm install express
 ```
-> Helps maintain the code with elegant flavor
+
 
 #### ejs
 To install
