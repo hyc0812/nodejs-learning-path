@@ -15,12 +15,14 @@ const mongoURI = 'mongodb+srv://yongchanghe:abcdABCD12345@node-for-yong.yojr5.mo
 mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
     .then((result) => app.listen(3000))
     .catch(err => console.log(err));
+
 // register view engine, important
 app.set('views', './views');
 app.set('view engine', 'ejs');
 
 // use the middleware from third party
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));    // for form data (POST)
 app.use(morgan('dev'));
 
 // mongoose and mongo sandbox routes
@@ -71,10 +73,24 @@ app.get('/', (req, res) => {
     res.redirect('/blogs');
 }); 
 
+// render the blogs page to the index.ejs
 app.get('/blogs', (req, res) => {
     Blog.find().sort({ createdAt: 'desc' }) // or using { createdAt: -1 }
         .then(result => {
             res.render('index', { title: 'All Blogs', blogs: result });
+        })
+        .catch(err => {
+            console.log(err);
+        })
+});
+
+
+// submit a new blog using post method to the database
+app.post('/blogs', (req, res) => {
+    const blog = new Blog(req.body);
+    blog.save()
+        .then(result => {
+            res.redirect('/blogs');
         })
         .catch(err => {
             console.log(err);
