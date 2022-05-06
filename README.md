@@ -47,7 +47,7 @@ npm install ejs
 
 
 #### morgan
-> Third-party middle-ware
+> Third-party middle-ware, and will send you the path and method back to the terminal.
 
 To install
 ```linux

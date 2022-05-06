@@ -14,6 +14,7 @@ app.set('view engine', 'ejs');
 app.listen(3000);
 
 // use the middleware from third party
+app.use(express.static('public'));
 app.use(morgan('dev'));
 
 // make my own middleware
