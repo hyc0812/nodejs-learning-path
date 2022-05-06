@@ -23,6 +23,12 @@ app.use((req, res, next) => {
 });
 
 
+app.use((req, res, next) => {
+    console.log('In the next middleware');
+    next();
+});
+
+
 app.get('/', (req, res) => {
     const blogs = [
         { title: 'Yoshi finds eggs', snippet: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quidem.' },
