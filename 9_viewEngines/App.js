@@ -5,6 +5,7 @@ const express = require('express');
 const app = express();
 
 // register view engine, important
+app.set('views', './views');
 app.set('view engine', 'ejs');
 
 
@@ -13,24 +14,21 @@ app.listen(3000);
 
 
 app.get('/', (req, res) => {
-    // res.send('<p> Home page Hello world using express and nodemon </p>');
-    // root helps to set the root path, so that we can use a relative path
-    res.sendFile('./views/index.html', { root: __dirname});
+    res.render('index', { title: 'Home' }); 
 })
 
 app.get('/about', (req, res) => {
     // res.send('<p> This is the about page </p>');
-    res.sendFile('./views/about.html', { root: __dirname});
+    res.render('about', { title: 'About' });
 })
 
-// redirects
-app.get('/about-us', (req, res) => {
-    res.redirect('/about');
+app.get('/blogs/create', (req, res) => {
+    res.render('create', { title: 'Create a new blog' });
 })
 
 // 404 page
 // This block should be at the very bottom, and this is important! 
 // Or the matching machanism will fail to do the match
 app.use((req, res) => {
-    res.sendFile('./views/404.html', { root: __dirname})
+    res.status(404).render('404', { title: '404' });
 })
