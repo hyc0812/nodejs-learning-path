@@ -12,6 +12,16 @@ app.set('view engine', 'ejs');
 // listen for requests
 app.listen(3000);
 
+// make my own middleware
+app.use((req, res, next) => {
+    console.log('new request made');
+    console.log('host:', req.hostname);
+    console.log('path:', req.path);
+    console.log('method:', req.method);
+    console.log('-------------------------------');
+    next();
+});
+
 
 app.get('/', (req, res) => {
     const blogs = [
