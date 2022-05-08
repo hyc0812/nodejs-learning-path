@@ -38,7 +38,7 @@ app.get('/about', (req, res) => {
 
 
 // blog routes
-app.use(blogRoutes);
+app.use( blogRoutes);
 
 // 404 page
 // This block should be at the very bottom, and this is important! 
