@@ -108,6 +108,14 @@ app.get('/blogs/:id', (req, res) => {
         })
 });
 
+app.delete('/blogs/:id', (req, res) => {
+    const id = req.params.id;
+    Blog.findByIdAndDelete(id)
+    .then(result => {
+        
+    })
+})
+
 app.get('/about', (req, res) => {
     // res.send('<p> This is the about page </p>');
     res.render('about', { title: 'About' });
