@@ -62,6 +62,9 @@ To install
 npm install mongoose
 ```
 
+#### Tip about new working place
+> Need to add the current IP address into the MongDB cloud server.
+
 
 References:
 
