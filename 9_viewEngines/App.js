@@ -25,53 +25,20 @@ app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));    // for form data (POST)
 app.use(morgan('dev'));
 
-// mongoose and mongo sandbox routes
-app.get('/add-blog', (req, res) => {
-    const blog = new Blog({
-        title: 'New Blog 3',
-        snippet: 'about my new blog',
-        body: 'New Blog Body'
-    });
-    blog.save()
-        .then(result => {
-            res.send(result);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-});
-
-// find all blogs
-app.get('/all-blogs', (req, res) => {
-    Blog.find()             // Here we use Blog but not blog
-        .then(result => {
-            res.send(result);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-});
-
-// find a blog by id
-app.get('/single-blog', (req, res) => {
-    Blog.findById('627582aa4fc70429789f2c92')
-        .then(result => {
-            res.send(result);
-        })
-        .catch(err => {
-            console.log(err);
-        });
-});
-
-// make my own middleware
-// app.use((req, res, next) => {
-//     console.log('new request made');
-//     console.log('host:', req.hostname);
-
+// routes
 // redirect to blogs
 app.get('/', (req, res) => {
     res.redirect('/blogs');
 }); 
+
+app.get('/about', (req, res) => {
+    // res.send('<p> This is the about page </p>');
+    res.render('about', { title: 'About' });
+})
+
+app.get('/blogs/create', (req, res) => {
+    res.render('create', { title: 'Create a new blog' });
+})
 
 // render the blogs page to the index.ejs
 app.get('/blogs', (req, res) => {
@@ -83,7 +50,6 @@ app.get('/blogs', (req, res) => {
             console.log(err);
         })
 });
-
 
 // submit a new blog using post method to the database
 app.post('/blogs', (req, res) => {
@@ -119,14 +85,6 @@ app.delete('/blogs/:id', (req, res) => {
     })
 })
 
-app.get('/about', (req, res) => {
-    // res.send('<p> This is the about page </p>');
-    res.render('about', { title: 'About' });
-})
-
-app.get('/blogs/create', (req, res) => {
-    res.render('create', { title: 'Create a new blog' });
-})
 
 // 404 page
 // This block should be at the very bottom, and this is important! 
